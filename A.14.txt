@@ -1,0 +1,37 @@
+class garbage_bin:
+
+    def __init__(self, item, weight,  day, expiration, finished):
+        self.item = item
+        self.weight = weight
+        self.expiration = expiration
+        self.day = day
+        self.finished = finished
+
+    def getDetails(self):
+        print("Item : " + self.item)
+        print("Weight : " + self.weight)
+        print("Day Kept In Trash : " + self.day)
+        print("Expiration : " + self.expiration)
+        print("Finished : " + self.finished)
+
+
+# Creating an instance
+milk = garbage_bin("Milk", "8 oz", "12/31/2020", "1/9/2021", "Yes")
+thrown_away_vegetables = garbage_bin("Thrown Away Vegetables", "3 oz", "1/5/2021", "1/7/2021", "No")
+chips = garbage_bin("Chips", "2 oz", "12/29/2020", "2/1/2021", "Yes")
+banana_peel = garbage_bin("Banana Peel", "4 oz", "1/7/2021", "1/10/2021", "Yes")
+apple_core = garbage_bin("Apple Core", "6 oz", "1/1/2021", "1/9/2021", "No")
+
+
+find_trash = input("Enter What You Are Looking For In Garbage Bin: ")
+find_trash.lower()
+if find_trash[0] == "m":
+    milk.getDetails()
+if find_trash[0] == "t" or find_trash[0] == "v":
+    thrown_away_vegetables.getDetails()
+if find_trash[0] == "c":
+    chips.getDetails()
+if find_trash[0] == "b":
+    banana_peel.getDetails()
+if find_trash[0] == "a":
+    apple_core.getDetails()
